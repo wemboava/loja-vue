@@ -1,0 +1,20 @@
+.button {
+    
+    
+    &--add {
+        width: 1.8em;
+        height: 1.8em;
+        border-radius: 50%;
+        background-color: #39AF78;
+        color: #2E4053;
+        font-size: 2.2em;
+
+        text-shadow: 2px 2px 9px #2e4053;
+        box-shadow: 2px 3px 12px 0px rgba(46, 64, 83, 0.412);
+
+        &:hover {
+            background-color: rgba(57, 175, 120, 0.774);
+            transition: .7s;
+        }
+    }
+}

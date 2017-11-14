@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,700,900");
+html, *, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer; }
+
+textarea:focus, input:focus, select:focus {
+  outline: 0; }
+
+body {
+  font-family: "Source Sans Pro", Helvetica, sans-serif; }
+
+.header {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  background-color: #c8d4ca;
+  box-shadow: 2px 3px 6px 0px rgba(46, 64, 83, 0.412); }
+  .header__title {
+    margin: 0;
+    font-weight: 500;
+    text-shadow: 2px 2px 9px #2e4053; }
+
+.green {
+  color: #39AF78; }
+
+.dark-green {
+  color: #2E4053; }
+
+.button--add {
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  background-color: #39AF78;
+  color: #2E4053;
+  font-size: 2.2em;
+  text-shadow: 2px 2px 9px #2e4053;
+  box-shadow: 2px 3px 12px 0px rgba(46, 64, 83, 0.412); }
+  .button--add:hover {
+    background-color: rgba(57, 175, 120, 0.774);
+    transition: .7s; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,7 +1,8 @@
+const service = new storage();
 
 new Vue({
     el: '#app',
-        data: {
-            message: 'Hello Vue.js!'
-        }
+    data: {
+        produtos: service.listItem()
+    }
 });

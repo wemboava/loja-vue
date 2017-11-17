@@ -13,11 +13,63 @@
         <header class="header">
             <h1 class="header__title">Loja.<span class="green">v</span><span class="dark-green">u</span><span class="green">e</span></h1>
         </header>
-        <p>{{ message }}</p>
-        <button class="button--add"><i class="fa fa-plus" aria-hidden="true"></i></button>
+
+        <table class="loja-table">
+            <tr class="loja-table__header">
+                <th class="loja-table__header__item">Name</th>
+                <th class="loja-table__header__item">Amount</th>
+                <th class="loja-table__header__item">Price</th>
+                <th class="loja-table__header__item">Url</th>
+                <th class="loja-table__header__item">Purchased</th>
+                <th class="loja-table__header__item">Edit</th>
+                <th class="loja-table__header__item">Trash</th>
+            </tr>
+
+            <tr v-for="produto in produtos" class="loja-table__row">
+                <td class="loja-table__row__item">{{ produto.name }}</td>
+                <td class="loja-table__row__item">{{ produto.amount }}</td>
+                <td class="loja-table__row__item">{{ produto.price }}</td>
+                <td class="loja-table__row__item">{{ produto.link }}</td>
+                <td class="loja-table__row__item"><input type="checkbox" :checked="produto.bool"></td>
+                <td class="loja-table__row__item"><i class="fa fa-pencil" aria-hidden="true"></i></td>
+                <td class="loja-table__row__item"><i class="fa fa-trash" aria-hidden="true"></i></td>
+            </tr>
+        </table>
+
+        <button class="button--add"><i class="fa fa-plus" aria-hidden="true" onclick="clickAdd()"></i></button>
     </div>
     
+    <script src="storage.js"></script>
     <script src="main.js"></script>
+    <script>
 
+    </script>
 </body>
 </html>
+
+<!-- 
+<table class="form-table">
+    <tr class="form-table__row">
+        <td class="form-table__row__label">Nome</td>
+        <td class="form-table__row__input"><input type="text" id="input-name"></td>
+    </tr>
+    <tr class="form-table__row">
+        <td class="form-table__row__label">Quantidade</td>
+        <td class="form-table__row__input"><input type="number" id="input-amount"></td>
+    </tr>
+    <tr class="form-table__row">
+        <td class="form-table__row__label">Valor</td>
+        <td class="form-table__row__input"><input type="text" id="input-price"></td>
+    </tr>
+    <tr class="form-table__row">
+        <td class="form-table__row__label">Url</td>
+        <td class="form-table__row__input"><input type="url" id="input-link"></td>
+    </tr>
+    <tr class="form-table__row">
+        <td class="form-table__row__label">Purchased</td>
+        <td class="form-table__row__input">
+            <input type="checkbox" id="input-yes">
+        </td>
+    </tr>
+</table>
+ -->

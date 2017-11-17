@@ -16,13 +16,17 @@ textarea:focus, input:focus, select:focus {
   outline: 0; }
 
 body {
-  font-family: "Source Sans Pro", Helvetica, sans-serif; }
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  max-width: 90%;
+  margin: 0 auto; }
 
 .header {
-  width: 100%;
+  width: 105vw;
+  margin-left: -6%;
   text-align: center;
   font-size: 2em;
   background-color: #c8d4ca;
+  border-top: solid 1px #39AF78;
   box-shadow: 2px 3px 6px 0px rgba(46, 64, 83, 0.412); }
   .header__title {
     margin: 0;
@@ -39,13 +43,45 @@ body {
   width: 1.8em;
   height: 1.8em;
   border-radius: 50%;
+  margin-top: 1em;
+  margin-left: 90%;
   background-color: #39AF78;
   color: #2E4053;
   font-size: 2.2em;
   text-shadow: 2px 2px 9px #2e4053;
-  box-shadow: 2px 3px 12px 0px rgba(46, 64, 83, 0.412); }
+  box-shadow: 2px 3px 12px 0px rgba(46, 64, 83, 0.412);
+  transition: background-color ease .5s; }
   .button--add:hover {
     background-color: rgba(57, 175, 120, 0.774);
     transition: .7s; }
+
+.loja-table {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3em;
+  border-collapse: collapse; }
+  .loja-table__row {
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    transition: background-color ease .5s; }
+    .loja-table__row:hover {
+      background-color: #c8d4ca; }
+    .loja-table__row__item {
+      padding: 1em .5em; }
+  .loja-table__header {
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid #ddd; }
+    .loja-table__header__item {
+      padding: 1em .5em; }
+
+.fa-pencil {
+  color: #2E4053;
+  cursor: pointer; }
+
+.fa-trash {
+  color: red;
+  cursor: pointer; }
 
 /*# sourceMappingURL=app.css.map */

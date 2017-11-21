@@ -19,24 +19,15 @@ class storage {
         return vet;
     }
 
-    addItem() {
-        
-        let name = 'bermuda'
-        , amount = '3'
-        , link = 'http://yahoo.com/asdojoiadjsaskda-sas-asd-asdas'
-        , price = 54.5
-        , bool = false
-        , cont = localStorage.length + 1
-        , product = { name, amount, link, price, bool };
+    addItem(product) {
+        if(product.name != null) {
+            localStorage.setItem(product.name, JSON.stringify(product));
 
-        localStorage.setItem(name, JSON.stringify(product));
-        
-        console.log(product);
+            const service = new storage();
+            service.listItem;
 
-        const service = new storage();
-        service.listItem;
-       
-        document.location.reload()
+            document.location.reload()
+        }
     }
 
     removeItem(key) {   

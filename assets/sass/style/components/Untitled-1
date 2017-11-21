@@ -1,0 +1,9 @@
+root
+    app
+        views
+            main.js
+        services
+            storage.js
+        components
+            table.js
+            modal.js

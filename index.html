@@ -35,11 +35,15 @@
                 <td class="loja-table__row__item"><i class="fa fa-trash" aria-hidden="true"></i></td>
             </tr>
         </table>
+        
+        <button href="#" class="button button--add" onclick="document.getElementById('myModal').style.display='block'" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    
+        <modal-add></modal-add>
 
-        <button class="button--add"><i class="fa fa-plus" aria-hidden="true" onclick="clickAdd()"></i></button>
     </div>
     
     <script src="storage.js"></script>
+    <script src="modal-add.js"></script>
     <script src="main.js"></script>
     <script>
 
@@ -47,29 +51,3 @@
 </body>
 </html>
 
-<!-- 
-<table class="form-table">
-    <tr class="form-table__row">
-        <td class="form-table__row__label">Nome</td>
-        <td class="form-table__row__input"><input type="text" id="input-name"></td>
-    </tr>
-    <tr class="form-table__row">
-        <td class="form-table__row__label">Quantidade</td>
-        <td class="form-table__row__input"><input type="number" id="input-amount"></td>
-    </tr>
-    <tr class="form-table__row">
-        <td class="form-table__row__label">Valor</td>
-        <td class="form-table__row__input"><input type="text" id="input-price"></td>
-    </tr>
-    <tr class="form-table__row">
-        <td class="form-table__row__label">Url</td>
-        <td class="form-table__row__input"><input type="url" id="input-link"></td>
-    </tr>
-    <tr class="form-table__row">
-        <td class="form-table__row__label">Purchased</td>
-        <td class="form-table__row__input">
-            <input type="checkbox" id="input-yes">
-        </td>
-    </tr>
-</table>
- -->

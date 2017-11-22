@@ -9,7 +9,7 @@
         border-bottom: 1px solid #ddd;
         transition: background-color ease .5s;
         &:hover {
-            background-color: #c8d4ca;
+            background-color: $color-default-light;
         }
         &__item {
            padding: 1em .5em;
@@ -26,7 +26,7 @@
 }
 
 .fa-pencil {
-    color: #2E4053;
+    color: $color-default-dark;
     cursor: pointer;
 }
 .fa-trash {

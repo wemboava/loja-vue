@@ -29,21 +29,23 @@
                 <td class="loja-table__row__item">{{ produto.name }}</td>
                 <td class="loja-table__row__item">{{ produto.amount }}</td>
                 <td class="loja-table__row__item">{{ produto.price }}</td>
-                <td class="loja-table__row__item">{{ produto.link }}</td>
+                <td class="loja-table__row__item"><a :href="produto.link">{{ produto.link }}</a></td>
                 <td class="loja-table__row__item"><input type="checkbox" :checked="produto.purchased"></td>
                 <td class="loja-table__row__item" @click="EditObj(produto), showModal=true"><i class="fa fa-pencil" aria-hidden="true"></i></td>
-                <td class="loja-table__row__item"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                <td class="loja-table__row__item" @click="excluirItem(produto.name), showModalRemove=true"><i class="fa fa-trash" aria-hidden="true"></i></td>
             </tr>
         </table>
         
         <button href="#" class="button button--add" @click="clearModal(), showModal=true" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
     
         <modal-add v-if="showModal" @close="showModal=false" :obj-product="product"></modal-add>
+        <modal-remove v-if="showModalRemove" @close="showModalRemove=false" :name-item="nameItem"></modal-remove>
 
     </div>
     
     <script src="storage.js"></script>
     <script src="modal-add.js"></script>
+    <script src="modal-remove.js"></script>
     <script src="main.js"></script>
     <script>
 

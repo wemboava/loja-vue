@@ -13,7 +13,9 @@ new Vue({
             link : "", 
             purchased : "" 
         },
-        showModal : false
+        nameItem : "",
+        showModal : false,
+        showModalRemove : false
     },
     
     methods: {
@@ -22,6 +24,9 @@ new Vue({
         },
         EditObj(product) {
             this.product = product;
+        },
+        excluirItem(nameItem) {
+            this.nameItem = nameItem;
         },
         clearModal() {
             this.product.name = "",

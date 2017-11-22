@@ -1,6 +1,6 @@
 .form-table {
     position: absolute;
-    background-color: #c8d4ca;
+    background-color: $color-default-light;
     width: 500px;
     padding: 2em;
     margin: 0 auto;
@@ -27,7 +27,7 @@
             border-radius: 6px;
             position: relative;
             &:focus {
-                border-color: #39AF78;
+                border-color: $color-default;
             }
         }
     }

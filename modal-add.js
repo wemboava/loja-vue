@@ -36,8 +36,7 @@ Vue.component('modal-add', {
         </div>`,
     data() {
         return {
-            product: 
-                this.objProduct
+            product: Object.assign({}, this.objProduct)
          }
     },
     methods: {

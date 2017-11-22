@@ -7,3 +7,10 @@ body {
     position: relative;
     overflow-x: hidden;    
 }
+a {
+    color: $color-default-dark;
+    transition: color.3s ease;
+    &:hover {
+        color: $color-default   
+    }
+}

@@ -14,11 +14,8 @@ class storage {
             
             vet.push(JSON.parse(jsonText));
         }
-        console.log(vet);
-
         return vet;
     }
-
     addItem(product) {
         if(product.name != null || product.name != "") {
             localStorage.setItem(product.name, JSON.stringify(product));
@@ -29,8 +26,8 @@ class storage {
             document.location.reload()
         }
     }
-
     removeItem(key) {   
         localStorage.removeItem(key);
+        document.location.reload()
     }
 }

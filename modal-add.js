@@ -4,7 +4,7 @@ Vue.component('modal-add', {
     props: ['objProduct'],
     
     template: 
-        `<transition id="myModal" ref="close" class="modal close">
+        `<div id="myModal" ref="close" class="modal close">
             <form class="form-table">
                 <div class="form-table__row">
                     <label for="input-name" class="form-table__row__label">Nome:</label>
@@ -33,7 +33,7 @@ Vue.component('modal-add', {
                     <a class="button button--add" @click="save()"><i class="fa fa-check" aria-hidden="true"></i></a>
                 </div>
             </form>
-        </transition>`,
+        </div>`,
     data() {
         return {
             product: 

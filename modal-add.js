@@ -1,10 +1,10 @@
 
 Vue.component('modal-add', {
     
-    props: ['todo'],
-   
+    props: ['objProduct'],
+    
     template: 
-        `<div id="myModal" ref="close" class="modal close">
+        `<transition id="myModal" ref="close" class="modal close">
             <form class="form-table">
                 <div class="form-table__row">
                     <label for="input-name" class="form-table__row__label">Nome:</label>
@@ -29,20 +29,15 @@ Vue.component('modal-add', {
                     </td>
                 </div>
                 <div class="form-table__buttons">
-                    <a class="button button--close" @click="closeModal()"><i class="fa fa-close" aria-hidden="true"></i></a>
+                    <a class="button button--close" @click="$emit('close')"><i class="fa fa-close" aria-hidden="true"></i></a>
                     <a class="button button--add" @click="save()"><i class="fa fa-check" aria-hidden="true"></i></a>
                 </div>
             </form>
-        </div>`,
+        </transition>`,
     data() {
         return {
-            product: { 
-                name : null, 
-                amount : null, 
-                price : null, 
-                link : null, 
-                purchased : null 
-            }
+            product: 
+                this.objProduct
          }
     },
     methods: {

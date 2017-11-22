@@ -30,15 +30,15 @@
                 <td class="loja-table__row__item">{{ produto.amount }}</td>
                 <td class="loja-table__row__item">{{ produto.price }}</td>
                 <td class="loja-table__row__item">{{ produto.link }}</td>
-                <td class="loja-table__row__item"><input type="checkbox" :checked="produto.bool"></td>
-                <td class="loja-table__row__item"><i class="fa fa-pencil" aria-hidden="true"></i></td>
+                <td class="loja-table__row__item"><input type="checkbox" :checked="produto.purchased"></td>
+                <td class="loja-table__row__item" @click="EditObj(produto), showModal=true"><i class="fa fa-pencil" aria-hidden="true"></i></td>
                 <td class="loja-table__row__item"><i class="fa fa-trash" aria-hidden="true"></i></td>
             </tr>
         </table>
         
-        <button href="#" class="button button--add" onclick="document.getElementById('myModal').style.display='block'" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        <button href="#" class="button button--add" @click="clearModal(), showModal=true" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
     
-        <modal-add></modal-add>
+        <modal-add v-if="showModal" @close="showModal=false" :obj-product="product"></modal-add>
 
     </div>
     

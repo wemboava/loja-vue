@@ -20,7 +20,7 @@ class storage {
     }
 
     addItem(product) {
-        if(product.name != null) {
+        if(product.name != null || product.name != "") {
             localStorage.setItem(product.name, JSON.stringify(product));
 
             const service = new storage();

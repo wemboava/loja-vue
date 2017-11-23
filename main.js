@@ -17,9 +17,6 @@ new Vue({
     },
     
     methods: {
-        showModal() {
-            this.$refs.close.style.display = "flex";
-        },
         EditObj(product) {
             this.product = product;
         },

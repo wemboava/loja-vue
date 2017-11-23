@@ -1,11 +1,13 @@
 .modal__remove {
     width: 350px;
     height: 200px;;
-    background-color: $color-default-light;
+    
     margin: auto;
     display: flex;
     flex-direction: column;
+    
     border-radius: 5px;
+    background-color: $color-default-light;
     box-shadow: 2px 3px 6px 0px rgba(46, 64, 83, 0.412);
     &__title {
         padding: 2em 2em 1em 2em;

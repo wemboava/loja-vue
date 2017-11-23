@@ -1,7 +1,5 @@
 const service = new storage();
 
-
-
 new Vue({
     el: '#app',
     data: {

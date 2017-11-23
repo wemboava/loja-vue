@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,700,900');
 
 body {
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
     max-width: 90%;
+    
     margin: 0 auto;
     position: relative;
+    
     overflow-x: hidden;    
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 a {
-    color: $color-default-dark;
     transition: color.3s ease;
+    color: $color-default-dark;
     &:hover {
         color: $color-default   
     }

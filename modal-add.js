@@ -37,7 +37,7 @@ Vue.component('modal-add', {
     data() {
         return {
             product: Object.assign({}, this.objProduct)
-         }
+        }
     },
     methods: {
         closeModal() {

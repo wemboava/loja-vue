@@ -6,7 +6,6 @@ Vue.component('modal-remove', {
             item : this.nameItem
         }
     },
-
     template:
         `<div class="modal">
             <div class="modal__remove">
@@ -17,12 +16,10 @@ Vue.component('modal-remove', {
                 </div>
             </div>
         </div>`,
-
     methods: {
         removeItem() {
             const service = new storage();
             service.removeItem(this.item);
         }
-
     } 
 })

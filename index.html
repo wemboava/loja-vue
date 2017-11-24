@@ -28,15 +28,15 @@
                     <td class="loja-table__row__item">{{ product.price }}</td>
                     <td class="loja-table__row__item"><a :href="product.link">{{ product.link }}</a></td>
                     <td class="loja-table__row__item"><input type="checkbox" :checked="product.purchased"></td>
-                    <td class="loja-table__row__item" @click="editObj(product)"><i class="fa fa-pencil" aria-hidden="true"></i></td>
+                    <td class="loja-table__row__item" @click="editItem(product)"><i class="fa fa-pencil" aria-hidden="true"></i></td>
                     <td class="loja-table__row__item" @click="removeItem(product.name)"><i class="fa fa-trash" aria-hidden="true"></i></td>
                 </tr>
             </table>
             
-            <button href="#" class="button button--add" @click="clearModal(), showModalAdd()" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            <button href="#" class="button button--add" @click="additem" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
         
-            <modal-add v-if="modalAdd" @close="closeModalAdd()" :obj-product="product"></modal-add>
-            <modal-remove v-if="modalRemove" @close="closeModalRemove()" :name-item="nameItem"></modal-remove>
+            <modal-add v-if="modal.form" @close="toggleModal('form')" :obj-product="product"></modal-add>
+            <modal-remove v-if="modal.remove" @close="toggleModal('remove')" :name-item="nameItem"></modal-remove>
         </div>
     </div>
     <script src="/app/services/storage.js"></script>

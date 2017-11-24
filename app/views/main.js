@@ -8,36 +8,30 @@ new Vue({
             listProduct: service.listItem(),
             product: {},
             nameItem : "",
-            modalAdd : false,
-            modalRemove : false,
+            modal: {
+                form: false,
+                remove: false 
+            },
             filter: "",
             headerProduct: ['Name', 'Amount', 'Price', 'Url', 'Purchased', 'Edit', 'Trash']
         }
     },
     
     methods: {
-        editObj (product) {
+        additem () {
+            this.product = {}
+            this.toggleModal('form');
+        },
+        editItem (product) {
             this.product = product;
-            this.showModalAdd();
+            this.toggleModal('form');
         },
         removeItem (nameItem) {
             this.nameItem = nameItem;
-            this.showModalRemove();
+            this.toggleModal('remove');
         },
-        clearModal () {
-            this.product = {}
-        }, 
-        showModalAdd () {
-            this.modalAdd = true;
-        },
-        closeModalAdd () {
-            this.modalAdd = false;
-        },
-        showModalRemove () {
-            this.modalRemove = true;
-        },
-        closeModalRemove () {
-            this.modalRemove = false;
+        toggleModal (modal) {
+            this.modal[modal] = !this.modal[modal];
         }
     },
 

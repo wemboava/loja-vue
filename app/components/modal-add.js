@@ -1,5 +1,6 @@
 
 Vue.component('modal-add', {
+    name: "ModalAddProduct",
     
     props: ['objProduct'],
     
@@ -34,18 +35,14 @@ Vue.component('modal-add', {
                 </div>
             </form>
         </div>`,
+
     data() {
         return {
             product: Object.assign({}, this.objProduct)
         }
     },
+
     methods: {
-        closeModal() {
-            this.$refs.close.style.display = "none"
-        },
-        openModal() {
-            this.$refs.close.style.display = "flex"
-        },
         save() {
             const service = new storage();
             service.addItem(this.product);

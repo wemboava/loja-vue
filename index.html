@@ -10,42 +10,39 @@
 <body>
     <div id="app">
         <header class="header">
-            <h1 class="header__title">Loja.<span class="green">v</span><span class="dark-green">u</span><span class="green">e</span></h1>
+            <h1 class="header__title">Xablau</h1>
         </header>
-        <search></search>
-        <table class="loja-table">
-            <tr class="loja-table__header">
-                <th class="loja-table__header__item">Name</th>
-                <th class="loja-table__header__item">Amount</th>
-                <th class="loja-table__header__item">Price</th>
-                <th class="loja-table__header__item">Url</th>
-                <th class="loja-table__header__item">Purchased</th>
-                <th class="loja-table__header__item">Edit</th>
-                <th class="loja-table__header__item">Trash</th>
-            </tr>
+        <div class="container">
+            <div class="search">
+                <p class="search__title">Search</p>
+                <input v-model="filter" class="search__input" type="text">
+            </div>
+            <table class="loja-table">
+                <tr class="loja-table__header">
+                    <th v-for="nameColumn in headerProduct" class="loja-table__header__item">{{ nameColumn }}</th>
+                </tr>
 
-            <tr v-for="produto in produtos" class="loja-table__row">
-                <td class="loja-table__row__item">{{ produto.name }}</td>
-                <td class="loja-table__row__item">{{ produto.amount }}</td>
-                <td class="loja-table__row__item">{{ produto.price }}</td>
-                <td class="loja-table__row__item"><a :href="produto.link">{{ produto.link }}</a></td>
-                <td class="loja-table__row__item"><input type="checkbox" :checked="produto.purchased"></td>
-                <td class="loja-table__row__item" @click="EditObj(produto), showModal=true"><i class="fa fa-pencil" aria-hidden="true"></i></td>
-                <td class="loja-table__row__item" @click="excluirItem(produto.name), showModalRemove=true"><i class="fa fa-trash" aria-hidden="true"></i></td>
-            </tr>
-        </table>
+                <tr v-for="product in filteredsProducts" class="loja-table__row">
+                    <td class="loja-table__row__item">{{ product.name }}</td>
+                    <td class="loja-table__row__item">{{ product.amount }}</td>
+                    <td class="loja-table__row__item">{{ product.price }}</td>
+                    <td class="loja-table__row__item"><a :href="product.link">{{ product.link }}</a></td>
+                    <td class="loja-table__row__item"><input type="checkbox" :checked="product.purchased"></td>
+                    <td class="loja-table__row__item" @click="editObj(product)"><i class="fa fa-pencil" aria-hidden="true"></i></td>
+                    <td class="loja-table__row__item" @click="removeItem(product.name)"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                </tr>
+            </table>
+            
+            <button href="#" class="button button--add" @click="clearModal(), showModalAdd()" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
         
-        <button href="#" class="button button--add" @click="clearModal(), showModal=true" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
-    
-        <modal-add v-if="showModal" @close="showModal=false" :obj-product="product"></modal-add>
-        <modal-remove v-if="showModalRemove" @close="showModalRemove=false" :name-item="nameItem"></modal-remove>
+            <modal-add v-if="modalAdd" @close="closeModalAdd()" :obj-product="product"></modal-add>
+            <modal-remove v-if="modalRemove" @close="closeModalRemove()" :name-item="nameItem"></modal-remove>
+        </div>
     </div>
-    
-    <script src="storage.js"></script>
-    <script src="modal-add.js"></script>
-    <script src="modal-remove.js"></script>
-    <script src="search.js"></script>
-    <script src="main.js"></script>
+    <script src="/app/services/storage.js"></script>
+    <script src="/app/components/modal-add.js"></script>
+    <script src="/app/components/modal-remove.js"></script>
+    <script src="/app/views/main.js"></script>
 </body>
 </html>
 

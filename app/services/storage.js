@@ -1,12 +1,7 @@
-function clickAdd(){
-    const service = new storage();
-    service.addItem();
-}
-
 class storage {
 
-    listItem() {
-        let vet=[];
+    listItem () {
+        let vet = [];
         
         for (let i = 0; i < localStorage.length ; i++) { 
             
@@ -14,19 +9,21 @@ class storage {
             
             vet.push(JSON.parse(jsonText));
         }
+
         return vet;
     }
-    addItem(product) {
-        if(product.name != null || product.name != "") {
+
+    addItem (product) {
+        if (product.name) {
             localStorage.setItem(product.name, JSON.stringify(product));
 
-            const service = new storage();
-            service.listItem;
+            this.listItem();
 
             document.location.reload()
         }
     }
-    removeItem(key) {   
+
+    removeItem (key) {   
         localStorage.removeItem(key);
         document.location.reload()
     }

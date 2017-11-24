@@ -13,7 +13,7 @@
         border-bottom: 1px solid #ddd;
         transition: background-color ease .5s;
         &:hover {
-            background-color: $color-default-light;
+            background-color: lighten($color-default, 40%);
         }
         &__item {
             padding: 1em .5em;

@@ -2,7 +2,7 @@
     width: 100%;
 
     margin: 0 auto;
-    margin-top: 0;
+    margin-top: 2em;
     
     border-collapse: collapse;
     &__row {
@@ -32,7 +32,7 @@
 
 .fa-pencil {
     cursor: pointer;
-    color: $color-default-dark;
+    color: #0092c7;
 }
 .fa-trash {
     cursor: pointer;

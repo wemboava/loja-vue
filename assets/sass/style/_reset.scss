@@ -16,3 +16,7 @@ a {
 textarea:focus, input:focus, select:focus {
     outline: 0;
 }
+input[type=checkbox] {
+    zoom: 1.5;
+    vertical-align: middle;
+}

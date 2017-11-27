@@ -4,19 +4,20 @@
         <title>Loja</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="dist/app.css">
+        <link type="image/x-icon" rel="icon" href="favicon.ico">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
         <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
     <div id="app">
         <header class="header">
-            <h1 class="header__title">Xablau</h1>
+            <img class="header__logo" src="/logotipe.png" alt="">
+            
+            <div class="search">
+                <input v-model="filter" class="search__input" type="search" placeholder="Search">
+            </div>
         </header>
         <div class="container">
-            <div class="search">
-                <p class="search__title">Search</p>
-                <input v-model="filter" class="search__input" type="text">
-            </div>
             <table class="loja-table">
                 <tr class="loja-table__header">
                     <th v-for="nameColumn in headerProduct" class="loja-table__header__item">{{ nameColumn }}</th>
@@ -33,9 +34,9 @@
                 </tr>
             </table>
             
-            <button href="#" class="button button--add" @click="additem" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            <button href="#" class="button button--home" @click="additem()" id="myBtn"><i class="fa fa-plus" aria-hidden="true"></i></button>
         
-            <modal-add v-if="modal.form" @close="toggleModal('form')" :obj-product="product"></modal-add>
+            <modal-add v-if="modal.form" @close="toggleModal('form')" :obj-product="product" :method="method"></modal-add>
             <modal-remove v-if="modal.remove" @close="toggleModal('remove')" :name-item="nameItem"></modal-remove>
         </div>
     </div>
@@ -45,4 +46,5 @@
     <script src="/app/views/main.js"></script>
 </body>
 </html>
+
 

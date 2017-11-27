@@ -1,12 +1,11 @@
 .search {
-    padding: 1em;
     display: flex;
-    justify-content: flex-end;
-    &__title {
-        align-self: center;
-        margin: 0 1em;
-    }
+    margin-right: 5%; 
+
     &__input {
+        width: 200px;
+        height: 70%;
+        align-self: center;
         padding: .3em;
         border-radius: 6px;
         font-size: 1em;

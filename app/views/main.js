@@ -12,6 +12,7 @@ new Vue({
                 form: false,
                 remove: false 
             },
+            method: '',
             filter: "",
             headerProduct: ['Name', 'Amount', 'Price', 'Url', 'Purchased', 'Edit', 'Trash']
         }
@@ -19,20 +20,27 @@ new Vue({
     
     methods: {
         additem () {
+            this.method  = 'save'
             this.product = {}
-            this.toggleModal('form');
+            this.toggleModal('form')
         },
+
         editItem (product) {
+            this.method  = 'edit'
             this.product = product;
-            this.toggleModal('form');
+            this.toggleModal('form')
         },
+
         removeItem (nameItem) {
-            this.nameItem = nameItem;
-            this.toggleModal('remove');
+            this.nameItem = nameItem
+            this.toggleModal('remove')
         },
+
         toggleModal (modal) {
-            this.modal[modal] = !this.modal[modal];
-        }
+            this.modal[modal] = !this.modal[modal]
+        },
+
+
     },
 
     computed: {

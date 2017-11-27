@@ -2,36 +2,45 @@
 Vue.component('modal-add', {
     name: "ModalAddProduct",
     
-    props: ['objProduct'],
+    props: ['objProduct', 'method'],
     
     template: 
         `<div id="myModal" ref="close" class="modal close">
             <form class="form-table">
-                <div class="form-table__row">
-                    <label for="input-name" class="form-table__row__label">Nome:</label>
-                    <input class="form-table__row__input" v-model="product.name" type="text" id="input-name">
+                <div class="group-input">
+                    <input v-model="product.name" id="input-name" class="input-form" type="text" required>
+                    <span class="test-bottom"></span>
+                    <label class="input-name" for="input-name">Name</label>
                 </div>
-                <div class="form-table__row">
-                    <label for="input-amount" class="form-table__row__label">Quantidade:</label>
-                    <input class="form-table__row__input" v-model="product.amount" type="number" id="input-amount">
+    
+                <div class="group">
+                    <div class="group-input">
+                        <input v-model="product.amount" id="input-amount" class="input-form" type="number" required>
+                        <span class="test-bottom"></span>
+                        <label class="input-name" for="input-amount">Amount</label>
+                    </div>
+    
+                    <div class="group-input">
+                        <input v-model="product.price" id="input-price" class="input-form" type="number" required>
+                        <span class="test-bottom"></span>
+                        <label class="input-name" for="input-price">Price</label>
+                    </div>
                 </div>
-                <div class="form-table__row">
-                    <label for="input-price" class="form-table__row__label">Valor:</label>
-                    <input class="form-table__row__input" v-model="product.price" type="text" id="input-price">
+    
+                <div class="group-input">
+                    <input v-model="product.link" id="input-link" class="input-form" type="url" required>
+                    <span class="test-bottom"></span>
+                    <label class="input-name" for="input-link">Url</label>
                 </div>
-                <div class="form-table__row">
-                    <label for="input-link" class="form-table__row__label">Url:</label>
-                    <input class="form-table__row__input" v-model="product.link" type="url" id="input-link">
+                
+                <div class="input-purchased">
+                    <label class="" for="input-yes">Purchased</label>
+                    <input v-model="product.purchased" id="input-yes" type="checkbox" required>
                 </div>
-                <div class="form-table__row">
-                    <label for="input-yes" class="form-table__row__label">Purchased:</label>
-                    <td class="form-table__row__input">
-                        <input v-model="product.purchased" type="checkbox" id="input-yes">
-                    </td>
-                </div>
+                
                 <div class="form-table__buttons">
-                    <a class="button button--close" @click="$emit('close')"><i class="fa fa-close" aria-hidden="true"></i></a>
-                    <a class="button button--add" @click="save()"><i class="fa fa-check" aria-hidden="true"></i></a>
+                    <a class="button button--close" @click="$emit('close')">Close</a>
+                    <a class="button button--add" @click="foo">Save</a>
                 </div>
             </form>
         </div>`,
@@ -43,9 +52,18 @@ Vue.component('modal-add', {
     },
 
     methods: {
+        foo () {
+            this[this.method]()
+        },
+        
         save() {
             const service = new storage();
             service.addItem(this.product);
+        },
+        
+        edit() {
+            const service = new storage();
+            service.editItem(this.product);
         }
     }
 })

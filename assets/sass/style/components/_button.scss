@@ -1,32 +1,41 @@
 .button {
-    width: 1.8em;
-    height: 1.8em;
+    padding: 0.4em 1.4em;
     
-    border-radius: 50%;
+    border-radius: 3px;
     margin-top: 1em;
-    margin-left: 90%;
+    margin-left: 93.9%;
     
     display: flex;
     justify-content: center;
     align-items: center;
 
     color: white;
-    font-size: 2.2em;
-    text-shadow: 2px 2px 9px $color-default-dark;
-    box-shadow: 2px 3px 12px 0px rgba(46, 64, 83, 0.412);
+    font-size: 1.2em;
     transition: background-color ease .5s;
     cursor: pointer;
-    &--add {
-        background-color: $color-default;
+    &--home {
+        width: 1.8em;
+        height: 1.8em;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 2em;
+        background-color: #23d160;
         &:hover {
-            background-color: darken($color-default, 10%);
+            background-color: darken(#23d160, 10%);
+            transition: .7s;
+        }
+    }
+    &--add {
+        background-color: #23d160;
+        &:hover {
+            background-color: darken(#23d160, 10%);
             transition: .7s;
         }
     }
     &--close {
         background-color: rgb(255, 0, 0);
         &:hover {
-            background-color: rgba(255, 0, 0, 0.63);
+            background-color: darken(red, 10%);
             transition: .7s;
         }
     }

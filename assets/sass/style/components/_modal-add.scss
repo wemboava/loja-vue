@@ -1,11 +1,8 @@
 .form-table {
     width: 500px;
 
-    position: absolute;
     padding: 2em;
-    margin: 0 auto;
-    top: calc(5%);
-    right: calc(50% - 250px);
+    margin:  auto;
     
     border-radius: 5px;
     background-color: white;
@@ -13,6 +10,7 @@
     &__row {
         width: 90%;
         margin: 0 auto;
+        padding: .5em 0;
         &__label {
             width: 10%;   
             padding: 1em 0;
@@ -44,7 +42,7 @@
         position: relative;
         & .button {
             margin-left: 0;      
-            margin-top: 10px;      
+            margin-top: 0;      
         }
     }
 }
